@@ -1,0 +1,111 @@
+h3{
+		font-family: 'Love Ya Like A Sister', cursive;
+		padding:0px;
+		font-weight:bold;
+	}
+option:not(:checked) {
+    background-color: #FFF;
+}
+	.hh{
+		background: #3DAEE3;
+		text-align: left;
+		color: #fff;
+		font-size: 22px;
+		font-weight: bold;
+		/* float: left; */
+		width: 100%;
+		padding: 2px 0px 5px 5px;
+		text-shadow: 0px 0px 1px rgba(0,0,0,.4);
+		font-family: "Trebuchet MS", sans-serif
+			
+	}
+	.m{
+		font-size:10px;
+		color:red;
+	}
+		.h{
+		cursor: pointer;
+		text-align: left; 
+		float: left; 
+		margin: 5px 0px; 
+		background-color: #f4f4f4; 
+		width: 360px; 
+		padding: 10px; 
+		margin-left: 80px; 
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px; 
+		 border: 2px solid #aaa; 
+		color: #000; 
+		-moz-box-shadow: 0 0 2px 2px #f4f4f4;
+		-webkit-box-shadow: 0 0 2px 2px #f4f4f4;
+
+		}
+		.navbar-inverse {
+			background-color: #3DAEE3;
+			border-color: #E7E7E7;
+			color:white;
+			 min-height: 35px;
+			 		font-family: 'Love Ya Like A Sister', cursive;
+		}
+		.navbar-inverse .navbar-nav > li > a {
+			color: white;
+			font-weight: bold;
+			 line-height: 35px;
+			 font-size:20px;
+		}
+		.navbar-inverse .navbar-brand {
+			color: white;
+			font-size:35px;
+			line-height: 35px;
+			font-weight: bold;
+		}
+		.btn-lg {
+			width:100%;
+		}
+.resultpage{
+	font-family: 'Love Ya Like A Sister', cursive;
+	font-size:50px;
+	text-align:center;
+}
+body{
+			font-family: 'Love Ya Like A Sister', cursive;
+			background: url(..img/6.jpg)no-repeat fixed;
+			max-width:100%;
+			
+			 -webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+		}
+		.home{
+			background: url(../img/6.jpg)no-repeat fixed;
+			min-height:600px;
+		}
+		.navbar-inverse {
+			background-color: #3DAEE3;
+			border-color: #E7E7E7;
+			color:white;
+			 min-height: 40px;
+		}
+		.navbar-inverse .navbar-nav > li > a {
+			color: white;
+			font-weight: bold;
+			 line-height: 40px;
+			 font-size:20px;
+		}
+		.navbar-inverse .navbar-brand {
+			color: white;
+			font-size:35px;
+			line-height: 40px;
+			font-weight: bold;
+		}
+		.form-control{
+			padding:23px 12px;
+			font-size:17px;
+			color:#737373;
+		}
+		.control-label {
+			font-size:17px;
+			color:#737373;
+		}
+
