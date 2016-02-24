@@ -1,3 +1,11 @@
+<?php
+	session_start();
+	$a=$_SESSION["username"];//echo$a;
+	$b=$_SESSION["password"];//echo$b;
+	if(empty($a)){
+		header("location:login.php");
+	}
+?>
 <html>
 <head>
 	<title>DIS</title>
@@ -13,10 +21,12 @@
             <div>
                 <ul class="nav navbar-nav">
                     <li class=""><a href="admin_home.php">Add Question</a></li>
-                    <li><a href="#">Add Contestant</a></li>
-					 <li><a href="view_question.php">View Question</a></li>
+                    <li><a href="add_contestant.php">Add Contestant</a></li>
+					 <li><a href="admin_question_view.php">View Question</a></li>
 					 <li><a href="contestant.php">View Contestant</a></li>
-                   
+					 <li><a href="ranking.php">Ranking</a></li>
+					 <li><a href="logout.php">Logout</a></li>
+						
                 </ul>
 
             </div>
@@ -24,7 +34,7 @@
     </nav>
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
-			<h2>Add Contestant</h2>
+			<h2><b>Add Contestant</b></h2>
 			  <form class="form-horizontal" role="form" method="post">
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="email">Full Name:</label>
@@ -42,18 +52,29 @@
 				<div class="form-group">
 				  <label class="control-label col-sm-2" for="email">Password:</label>
 				  <div class="col-sm-10">
-					<input type="text" class="form-control"  name="pass" placeholder="Password" required>
+					<input type="text" class="form-control" value="123456" name="pass" placeholder="Password" required>
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="control-label col-sm-2" for="email"> Class</label>
+				  <label class="control-label col-sm-2" for="email"> Grade</label>
 				  <div class="col-sm-10">
-					<select name="class">
-					  <option value="One">1</option>
-					  <option value="Two">2</option>
-					  <option value="Three">3</option>
-					  
+					<select name="grade">
+					  <option value="One">Grade One</option>
+					  <option value="Two">Grade Two</option>
+					  <option value="Three">Grade Three</option>
+					</select>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="control-label col-sm-2" for="email"> Branch</label>
+				  <div class="col-sm-10">
+					<select name="branch">
+					  <option value="Dhanmondi Branch">Dhanmondi Branch</option>
+					  <option value="Sobhanbug Branch">Sobhanbug Branch</option>
+					  <option value="Uttara Branch">Uttara Branch</option>
+					  <option value="Gazipur Branch">Gazipur Branch</option>
 					</select>
 				  </div>
 				</div>
@@ -76,7 +97,8 @@
 			fullname VARCHAR(200),
 			username VARCHAR(100) UNIQUE,
 			pass VARCHAR(100),
-			class VARCHAR(10),
+			grade VARCHAR(10),
+			branch VARCHAR(50),
 			PRIMARY KEY(cid)
 			
 			)";
@@ -87,9 +109,10 @@
 			$fname=$_POST['fullname'];echo$fname;
 			$username=$_POST['username'];echo$username;
 			$pass=$_POST['pass'];echo$pass;
-			$class = $_POST['class'];echo$class;
-			$sql="INSERT INTO contestant(fullname,username,pass,class)
-			VALUES('$fname','$username','$pass','$class')";
+			$branch = $_POST['branch'];echo$branch;
+			$grade = $_POST['grade'];echo$grade;
+			$sql="INSERT INTO contestant(fullname,username,pass,grade,branch)
+			VALUES('$fname','$username','$pass','$grade','$branch')";
 			if(!mysqli_query($conn,$sql)){
 			echo'<div class="alert alert-danger">
   <strong>Problem</strong> 
@@ -103,5 +126,8 @@
 	
 		
 	?>
+	<div class="col-md-8 col-md-offset-2">
+			<p class="text-center">Developed By :<a href="http://www.gdgbangla.com" target="_BLANK">GDG Bangla</a></p>
+		</div>
 </body>
 </html>

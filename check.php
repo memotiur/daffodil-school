@@ -15,7 +15,7 @@
             <div>
                 <ul class="nav navbar-nav navbar-right">
                    
-                    <li><a href="ranking.php"><span class=""></span> Ranking</a></li>
+                   
 					 <li><a href="logout.php"><span class=""></span> Logout</a></li>
                 </ul>
             </div>
@@ -25,8 +25,9 @@
 		<div class="resultpage col-md-8 col-md-offset-2">
 			<?php
 			session_start();
+			$grade=$_SESSION["grade"];
 				include('mysql_connect.php');
-				$sql="SELECT * FROM qset";
+				$sql="SELECT * FROM qset where grade='$grade'";
 				$result=mysqli_query($conn,$sql);
 				foreach ($_POST as $entry){
 				 //print $entry . "<br>";
@@ -64,6 +65,7 @@
 			rid int(11) AUTO_INCREMENT,
 			marks INT(200),
 			username VARCHAR(100),
+			submission datetime NOT NULL DEFAULT NOW(),
 			PRIMARY KEY(rid)
 			
 			)";

@@ -6,8 +6,17 @@ h3{
 option:not(:checked) {
     background-color: #FFF;
 }
+.btn-primary{
+ background-color: #f4780b;
+}
+.btn-primary:hover{
+ background-color: #f4780b;
+}
+option:checked {
+    background-color: #f4780b;
+}
 	.hh{
-		background: #3DAEE3;
+		background: #f4780b;
 		text-align: left;
 		color: #fff;
 		font-size: 22px;
@@ -28,7 +37,7 @@ option:not(:checked) {
 		text-align: left; 
 		float: left; 
 		margin: 5px 0px; 
-		background-color: #f4f4f4; 
+		background-color: #f4780b; 
 		width: 360px; 
 		padding: 10px; 
 		margin-left: 80px; 
@@ -41,7 +50,7 @@ option:not(:checked) {
 
 		}
 		.navbar-inverse {
-			background-color: #3DAEE3;
+			background-color: #f4780b;
 			border-color: #E7E7E7;
 			color:white;
 			 min-height: 35px;
@@ -82,7 +91,7 @@ body{
 			min-height:600px;
 		}
 		.navbar-inverse {
-			background-color: #3DAEE3;
+			background-color: #f4780b;
 			border-color: #E7E7E7;
 			color:white;
 			 min-height: 40px;

@@ -1,11 +1,12 @@
 <?php
+	$msg="";
 	if(isset($_POST['submit'])){
 		$user=$_POST['username'];//echo$user;
 		$pass=$_POST['pass'];//echo$pass;
 		include('mysql_connect.php');
 		$sql="SELECT * FROM contestant WHERE username='$user' AND pass='$pass'";
 		$result=mysqli_query($conn,$sql);
-		if($user=='admin' && $pass='motiur'){
+		if($user=='motiur' && $pass='password'){
 			session_start();
 			$_SESSION["username"]=$user;
 			$_SESSION["password"]=$pass;
@@ -13,13 +14,22 @@
 			exit();
 		}
 		if(mysqli_num_rows($result) > 0){
+			$row=mysqli_fetch_assoc($result);
 			session_start();
 			$_SESSION["username"]=$user;
 			$_SESSION["password"]=$pass;
-			header("Location: view_question.php"); /* Redirect browser */
+			$_SESSION["fullname"]=$row['fullname'];
+			$_SESSION["grade"]=$row['grade'];
+			$grade=$_SESSION["grade"];echo$grade;
+			$_SESSION["branch"]=$row['branch'];
+			
+				header("Location: grade_one_question.php"); /* Redirect browser */
+			
+			//header("Location: grade_one_question.php"); /* Redirect browser */
 			exit();
 		}else{
-			echo'Not Found';
+			$msg="Username And Password did not match.";
+			//echo'Not Found';
 		}
 	}
 ?>
@@ -30,22 +40,22 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/custom.css" type="text/css">
 </head>
-<body>
+<body class="login">
 	<nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="login.php">Kids Contest</a>
+                <a href="index.php"><img src="img/logo.png" height="65px"></a>
             </div>
             <div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="ranking.php"><span class=""></span> Ranking</a></li>
+                    <li><a href="login.php"><span class=""></span>Login</a></li>
                 </ul>
 
             </div>
         </div>
     </nav>
-	<div class="container">
-		<div class="col-md-6 col-md-offset-3">
+	<div class="container ">
+		<div class="col-md-7 col-md-offset-3 loginpage">
 			<h2 class="text-center">Login</h2>
 			  <form class="form-horizontal" role="form" method="post">
 				
@@ -64,13 +74,20 @@
 
 				<div class="form-group">        
 				  <div class="col-sm-offset-2 col-sm-10">
-					<input type="submit" value="Submit" name="submit" class="btn btn-primary btn-lg">
+					<input type="submit" value="Login" name="submit" class="btn btn-primary btn-lg">
 				  </div>
 				</div>
 			  </form>
+			  <?php
+				if($msg!=""){
+					echo'<div class="col-sm-offset-2 col-sm-10 alert alert-danger">';echo$msg.'</div>';
+		
+				}
+				?>
 		</div>
-		<div class="col-md-8 col-md-offset-2">
-			Developed By :
+		
+		<div class="col-md-7 col-md-offset-2">
+			<p class="text-center">Developed By :<a href="http://www.gdgbangla.com" target="_BLANK">GDG Bangla</a></p>
 		</div>
 	</div>
 </body>

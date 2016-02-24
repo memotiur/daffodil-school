@@ -7,7 +7,7 @@ option:not(:checked) {
     background-color: #FFF;
 }
 	.hh{
-		background: #3DAEE3;
+		background: #73AD21;
 		text-align: left;
 		color: #fff;
 		font-size: 22px;
@@ -41,7 +41,7 @@ option:not(:checked) {
 
 		}
 		.navbar-inverse {
-			background-color: #3DAEE3;
+			background-color: #73AD21;
 			border-color: #E7E7E7;
 			color:white;
 			 min-height: 35px;
@@ -82,7 +82,7 @@ body{
 			min-height:600px;
 		}
 		.navbar-inverse {
-			background-color: #3DAEE3;
+			background-color: #73AD21;
 			border-color: #E7E7E7;
 			color:white;
 			 min-height: 40px;
